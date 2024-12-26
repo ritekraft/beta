@@ -16,7 +16,18 @@ public class UserController {
 
     @PostMapping(path = "/save")
     public String saveUser(@RequestBody UserDTO userDTO){
-        String id = userIMPL.addUser(userDTO);
-        return id;
+        String userName = userIMPL.addUser(userDTO);
+        return userName;
     }
+
+    @PostMapping(path = "/update")
+    public String updateUser(@RequestBody UserDTO userDTO){
+        return userIMPL.updateUser(userDTO);
+    }
+
+    @DeleteMapping(path = "/delete/{userId}")
+    public void deleteUser(@PathVariable Integer userId){
+        userIMPL.deleteUser(userId);
+    }
+
 }
