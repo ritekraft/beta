@@ -13,6 +13,8 @@ import java.util.Collection;
 @Document(collection ="Catalogue")
 public class Catalogue {
     @Id
+    private  String Id;
+
     private String title;
 
 
@@ -126,7 +128,15 @@ public class Catalogue {
         this.availability = availability;
     }
 
-    public Catalogue(String title, String author, String isbn, LocalDate publishedDate, Double price, String genre, String language, String publisher, String description, Integer numberOfPages, Boolean availability) {
+    public String getId() {
+        return Id;
+    }
+
+    public void setId(String id) {
+        Id = id;
+    }
+
+    public Catalogue(String Id , String title, String author, String isbn, LocalDate publishedDate, Double price, String genre, String language, String publisher, String description, Integer numberOfPages, Boolean availability) {
         this.title = title;
         this.author = author;
         this.isbn = isbn;
@@ -138,6 +148,7 @@ public class Catalogue {
         this.description = description;
         this.numberOfPages = numberOfPages;
         this.availability = availability;
+        this.Id = Id;
     }
 
     public Catalogue(){
