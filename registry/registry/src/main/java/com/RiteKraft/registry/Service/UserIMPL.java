@@ -30,7 +30,6 @@ public class UserIMPL implements UserService {
             userDTO.getUserId(),
             userDTO.getUsername(),
             userDTO.getEmail(),
-
             userDTO.getPassword()
         );
 
